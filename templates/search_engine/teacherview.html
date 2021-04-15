@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+  {% extends "search_engine/index.html" %}
+  {% block css %}
+  div.mydiv{
+      padding: 8px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+  }
+  {% endblock %}
+  {% block body_block %}
+    <div class="mydiv">
+        <img src="/media/{{teach.image}}" width="244px" height="244px" align="right">
+        <b>Name:{{teach.name}}  </b><br>
+    <b>Designation:</b>{{teach.designation}} <br>
+    <b>Qualification: </b>{{teach.Qualification}}<br>
+    <b>Specialization:</b>{{teach.Specialization}}<br>
+    <b>branch:</b>{{teach.Branch}}<br>
+   <b> Experience:</b>{{teach.Experience}}<br>
+   <b> Research_publication:</b> {{teach.Research_Publications}}<br>
+    <b>contact:</b>{{teach.Email_ID}}
+      </div>
+
+
+
+  {% endblock %}

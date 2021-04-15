@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  {% extends "search_engine/index.html" %}
+  {% block css  %}
+  #more {display: none;}
+  #more1 {display: none;}
+  #more2 {display: none;}
+  div.mydiv{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+  }
+  {% endblock %}
+  {% block body_block %}
+
+    <marquee> <h1>  Current news in Brcm </h1>  </marquee> 
+    <div class="mydiv">
+<h2>Affliated back to MDU..</h2>
+<p> the students 1st , 2nd and 3rd year have been assured they have been reverted back to mdu university as off know.
+  <span id="dots1">...</span><span id="more1"> the court's decision came on 2nd of september that a stay order has been released.</span></p>
+<button onclick="myFunction('dots1','more1','myBtn1')" id="myBtn1">Read more</button>
+
+<h2>Engineer's day celebration </h2>
+<p> engineer's day celebration rescheduled to 13th of september instead of 15.<span id="dots2">...</span><span id="more2"> As 15th september will be observed as a holiday .</span></p>
+<button onclick="myFunction('dots2','more2','myBtn2')" id="myBtn2">Read more</button>
+</div>
+<script>
+function myFunction(id,id1,id2) {
+  var dots = document.getElementById(id);
+  var moreText = document.getElementById(id1);
+  var btnText = document.getElementById(id2);
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+
+{% endblock %}

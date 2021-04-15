@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  {% extends "search_engine/index.html" %}
+  {% block css %}
+  div.mydiv{
+      border: 1px solid gray;
+      padding: 8px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+  }
+  {% endblock %}
+  {% block body_block %}
+    <div class="mydiv">
+        <img src="/media/{{student.image}}" width="244px" height="244px" align="right">
+    <b>Name: </b>{{student.first_name}} {{student.last_name}} <br>
+    <b>Roll_no:</b>{{student.roll_no}} <br>
+    <b>Year: </b>{{student.year}}<br>
+    <b>Degree:</b>{{student.degree}}<br>
+    <b>branch:</b>{{student.branch}}<br>
+   <b> batch:</b>{{student.batch}}<br>
+   <b> secondary_education:</b> {{student.secondary_edu}}<br>
+    <b>higher_education:</b> {{student.higher_edu}}<br>
+    <b>address:</b> {{student.Address}}<br>
+    <b>about:</b> <br>{{student.stu_about}}<br>
+    <br>
+    <b>contact:</b>{{student.contact}}
+      </div>
+
+
+
+  {% endblock %}

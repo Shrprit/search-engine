@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  {% extends "search_engine/index.html" %}
+  {% block css %}
+  div.mydiv{
+      border: 3px solid gray;
+      padding: 8px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+  }
+  {% endblock %}
+  {% block body_block %}
+    <div class="mydiv">
+        <img src="/media/{{book.image}}" width="244px" height="244px" align="right">
+    <b>ID: </b>{{book.book_id}} <br>
+    <b>Name of book:</b>{{book.book_name}} <br>
+    <b> Author Name:</b> {{book.auth_name}}<br>
+    <b>Branch:</b>{{book.branch}}<br>
+    <b>Year of publish:</b>{{book.year_of_pub}}<br>
+    <b>No of books: </b>{{book.no_of_books}}<br>
+   <b> Book issued:</b>{{book.books_issued}}<br>
+    <b>Issued by:</b>{{book.issue_by}}<br><br> <br> <br>
+    <div>
+
+
+      
+  {% endblock %}

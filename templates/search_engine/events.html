@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends "search_engine/index.html" %}
+{% block css  %}
+#more {display: none;}
+#more1 {display: none;}
+#more2 {display: none;}
+div.mydiv{
+  margin-left:20px;
+  margin-right:20px;
+  margin-top:20px;
+}
+{% endblock %}
+  {% block body_block %}
+  <marquee> <h1>  Upcoming events (Coming Soon)</h1>  </marquee> 
+  <div class="mydiv">
+    <h2>Fresher  2k19</h2>
+    <p> fresher 2k19 is going to be held soon . Most probably chances of <span id="dots">...</span><span id="more"> 
+       fresher's party to organize is around 5th of october but still there is no official confirmation on this from college side.<br>
+      Fresher party is a fun way for sniors to get to know about their juniors. It also helps the junior to get out of their shell <br>
+      and explore their talents.
+    </span></p>
+    <button onclick="myFunction('dots','more','myBtn')" id="myBtn">Read more</button>
+    
+    <h2>Society Events</h2>
+    <p> Many society events such as tehnoholics and maizma will we oranized <span id="dots1">...</span><span id="more1">Events to be organized are: <br> beg borrow steal <br> mini cricket <br> mini football
+    <br> tic tac toe <br> frog race <br> treasure hunt
+    </span></p>
+    <button onclick="myFunction('dots1','more1','myBtn1')" id="myBtn1">Read more</button>
+    
+    <h2>kabaddi match</h2>
+    <p>kabaddi match will be going to organised soon. <span id="dots2">...</span><span id="more2">All kabbadi players be prepared for the upcoming kabaddi game and be a kabaddi champion <br>
+    players make your as soon as possible and register yourself in sports office. Date and venue of kabaddi will be displayed soon
+    
+    </span> </p>
+    <button onclick="myFunction('dots2','more2','myBtn2')" id="myBtn2">Read more</button>
+  </div>
+    <script>
+    function myFunction(id,id1,id2) {
+      var dots = document.getElementById(id);
+      var moreText = document.getElementById(id1);
+      var btnText = document.getElementById(id2);
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more"; 
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less"; 
+        moreText.style.display = "inline";
+      }
+    }
+    </script>
+    {% endblock %}

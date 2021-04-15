@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  {% extends "search_engine/index.html" %}
+  {% block css %}
+  td{
+    width:200px;
+  }
+  div.mydiv{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+  }
+  table{
+    padding:10px;
+  }
+  {% endblock %}
+  {% block body_block %}
+  <div name="mydiv">
+<h1>Search Results</h1>
+
+{% if students %}
+<h3 style="color:white"> Found something related to students </h3>
+<table cellspacing="100">
+  <tr>
+    <th>
+        first_name </th>
+         <th> last_name  </th> 
+         <th> Branch </th> 
+          <th>  roll_no  </th> 
+          <th>  year  </th>
+  </tr>  
+  {% for student in students %}
+   
+    <tr>
+    <td> {{student.first_name}}  </td><td> {{student.last_name }}  <td> {{ student.branch }} </td>
+      <td>  {{student.roll_no}} </td>  <td> {{student.year}} </td> <td> <a  href="/search_engine/studentview/{{student.roll_no}} " ><button id="pr{{student.roll_no}}" class= "btn btn-primary view"> Know more</button></td>
+    </tr>
+  {% endfor %}
+  {% elif book %}
+  </table >
+  <p> found something related to books</p>
+<table  className="padding-table-columns">
+  <tr>
+    <th> book -id </th>
+      <th> book-name </th> <th> auth-name </th> <th> Branch </th> <th> no. of books </th> <th> books left </th>
+      
+  </tr>  
+  {% for books in book %}
+    <tr>
+        <td> {{books.book_id}}  </td>
+    <td> {{books.book_name}}  </td>   <td> {{books.auth_name }} </td> <td> {{ books.branch }} </td>
+    <td> {{ books.no_of_books }} </td> <td> {{ books.books_issued }} </td> <td> <a  href="/search_engine/bookview/{{books.book_name}}" ><button id="bki{{books.book_name}}" class= "btn btn-primary view"> Know more</button></td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% elif teachers %}
+  </table >
+  <p> found something related to teachers</p>
+<table  className="padding-table-columns">
+  <tr>
+      <th> Name </th> <th> Designation </th> <th> Branch </th> 
+      
+  </tr>  
+  {% for teacher in teachers %}
+    <tr>
+        <td> {{teacher.name}}  </td>
+    <td> {{teacher.designation}}  </td>   <td> {{ teacher.Branch }} </td>
+     <td> <a  href="/search_engine/teacherview/{{teacher.name}}" ><button id="tch{{teacher.name}}" class= "btn btn-primary view"> Know more</button></td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% elif labs %}
+</table >
+<p> see lab locations here</p>
+<table  className="padding-table-columns">
+<tr>
+    <th>  lab_id </th>
+      </th> <th> Lab_name </th> <th> Block </th> <th>floor </th> <th>room_no</th>
+    
+</tr>  
+{% for lab in labs %}
+  <tr>
+    <td> {{lab.lab_id}}  </td> <td> {{lab.lab_name}}  </td> 
+  <td> {{lab.block}}  </td>   <td> {{ lab.floor }} </td>
+   <td> {{lab.room_no}}</td>
+  </tr>
+{% endfor %}
+</table>
+ {% else %}
+  <h2> Oops! Nothing found </h2>
+{% endif %}
+</div>
+ {% endblock %}
